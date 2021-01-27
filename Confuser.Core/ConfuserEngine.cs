@@ -92,6 +92,7 @@ namespace Confuser.Core {
 				});
 
 				var asmResolver = new ConfuserAssemblyResolver {EnableTypeDefCache = true};
+				asmResolver.UseGAC = false;
 				asmResolver.DefaultModuleContext = new ModuleContext(asmResolver);
 				context.InternalResolver = asmResolver;
 				context.BaseDirectory = Path.Combine(Environment.CurrentDirectory, context.Project.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);

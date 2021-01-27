@@ -17,6 +17,14 @@ namespace Confuser.Core {
 			}
 		}
 
+		public bool UseGAC {
+			get => InternalFuzzyResolver.UseGAC;
+			set {
+				InternalFuzzyResolver.UseGAC = value;
+				InternalExactResolver.UseGAC = value;
+			}
+		}
+
 		public ModuleContext DefaultModuleContext {
 			get => InternalFuzzyResolver.DefaultModuleContext;
 			set {
